@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502090902) do
+ActiveRecord::Schema.define(version: 20160502093118) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "name",                    null: false
@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 20160502090902) do
   add_index "clients", ["code"], name: "index_clients_on_code", unique: true
 
   create_table "tokens", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "token"
+    t.integer  "user_id",    null: false
+    t.string   "token",      null: false
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 20160502090902) do
   add_index "tokens", ["user_id"], name: "index_tokens_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "provider"
-    t.string   "uid"
+    t.string   "name",       null: false
+    t.string   "provider",   null: false
+    t.string   "uid",        null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
