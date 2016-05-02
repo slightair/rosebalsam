@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  code: aaaaaaaaaaaaaaaaaaaa
+  callback_url: MyString
+  deleted_at: 2016-05-02 18:09:02
+
+two:
+  name: MyString
+  code: bbbbbbbbbbbbbbbbbbbb
+  callback_url: MyString
+  deleted_at: 2016-05-02 18:09:02
