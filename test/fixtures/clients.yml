@@ -1,13 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+ios_app:
+  name: iOSApp
   code: aaaaaaaaaaaaaaaaaaaa
-  callback_url: MyString
+  callback_url: iosApp://rosebalsam/callback
+
+android_app1:
+  name: AndroidAppA
+  code: bbbbbbbbbbbbbbbbbbbb
+  callback_url: androidApp://rosebalsam/callback
   deleted_at: 2016-05-02 18:09:02
 
-two:
-  name: MyString
-  code: bbbbbbbbbbbbbbbbbbbb
-  callback_url: MyString
-  deleted_at: 2016-05-02 18:09:02
+android_app2:
+  name: AndroidAppB
+  code: cccccccccccccccccccc
+  callback_url: androidApp://rosebalsam/callback
