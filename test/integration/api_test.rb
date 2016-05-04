@@ -3,6 +3,11 @@ require 'test_helper'
 class ApiTest < ActionDispatch::IntegrationTest
   fixtures :users, :tokens
 
+  test "GET /api/v1/me with no token" do
+    get "/api/v1/me"
+    assert_response :unauthorized
+  end
+
   test "GET /api/v1/me with invalid token" do
     get "/api/v1/me", nil, HTTP_AUTHORIZATION: 'Token INVALID'
     assert_response :unauthorized

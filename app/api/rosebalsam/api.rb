@@ -7,8 +7,11 @@ module Rosebalsam
 
     helpers do
       def token_from_request
-        request.headers['Authorization'][/Token ([0-9a-f]+)/]
-        $1
+        if auth_header = request.headers['Authorization']
+          auth_header[/Token ([0-9a-f]+)/] ? $1 : nil
+        else
+          nil
+        end
       end
 
       def current_user
