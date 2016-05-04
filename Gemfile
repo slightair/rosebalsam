@@ -18,6 +18,9 @@ gem 'bootstrap-sass'
 
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'grape'
+gem 'grape-rabl'
+gem 'oj'
 gem 'websocket-rails'
 
 # Use jquery as the JavaScript library

@@ -1,0 +1,20 @@
+require 'test_helper'
+
+class ApiTest < ActionDispatch::IntegrationTest
+  fixtures :users, :tokens
+
+  test "GET /api/v1/me with invalid token" do
+    get "/api/v1/me", token: 'INVALID'
+    assert_response :unauthorized
+  end
+
+  test "GET /api/v1/me with valid token" do
+    get "/api/v1/me", token: 'TOKEN_ALICE_2'
+    assert_response :success
+
+    result = JSON.parse response.body
+    assert_includes result.to_a, ['name', 'Alice']
+    assert_includes result.to_a, ['provider', 'github']
+    assert_includes result.to_a, ['uid', '100']
+  end
+end
