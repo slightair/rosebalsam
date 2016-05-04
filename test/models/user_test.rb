@@ -5,12 +5,12 @@ class UserTest < ActiveSupport::TestCase
 
   test "alice's token" do
     alice = users(:alice)
-    assert_equal "TOKEN_ALICE_2", alice.token
+    assert_equal "4edbb6a5ffd08893ec791db7e917a2c0901ca895", alice.token
   end
 
   test "bob's token" do
     bob = users(:bob)
-    assert_equal "TOKEN_BOB_1", bob.token
+    assert_equal "2706d6900e47a84ddadb9912ded170ae24e58f18", bob.token
   end
 
   test "create token after created user" do
@@ -31,6 +31,6 @@ class UserTest < ActiveSupport::TestCase
 
     prev_token.reload
     assert_not_nil prev_token.deleted_at
-    assert_not_equal "TOKEN_ALICE_2", alice.token
+    assert_not_equal "4edbb6a5ffd08893ec791db7e917a2c0901ca895", alice.token
   end
 end

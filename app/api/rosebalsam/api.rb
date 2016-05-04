@@ -6,8 +6,13 @@ module Rosebalsam
     formatter :json, Grape::Formatter::Rabl
 
     helpers do
+      def token_from_request
+        request.headers['Authorization'][/Token ([0-9a-f]+)/]
+        $1
+      end
+
       def current_user
-        token = Token.find_by(token: params[:token])
+        token = Token.find_by(token: token_from_request)
         @current_user ||= token.try(:user)
       end
 

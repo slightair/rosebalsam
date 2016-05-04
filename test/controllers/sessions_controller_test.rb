@@ -21,7 +21,7 @@ class SessionsControllerTest < ActionController::TestCase
 
   test "GET /auth/github/callback?client=VALID_CODE" do
     get :callback, provider: 'github', client: 'aaaaaaaaaaaaaaaaaaaa'
-    assert_redirected_to "iosApp://rosebalsam/callback?token=TOKEN_ALICE_2"
+    assert_redirected_to "iosApp://rosebalsam/callback?token=4edbb6a5ffd08893ec791db7e917a2c0901ca895"
   end
 
   test "GET /auth/github/callback?client=INVALID_CODE" do

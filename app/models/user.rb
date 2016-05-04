@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   def create_token
     tokens.active.update_all(deleted_at: Time.now)
     loop do
-      new_token = SecureRandom.uuid
+      new_token = SecureRandom.hex(20)
       return tokens.create(token: new_token) if Token.where(token: new_token).empty?
     end
   end

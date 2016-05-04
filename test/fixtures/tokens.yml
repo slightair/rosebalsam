@@ -2,13 +2,13 @@
 
 alice_token_deleted:
   user: alice
-  token: TOKEN_ALICE_1
+  token: 913be174e518ad6b4f875c864b9d294bc7008c8a
   deleted_at: 2016-04-30 16:50:16
 
 alice_token_active:
   user: alice
-  token: TOKEN_ALICE_2
+  token: 4edbb6a5ffd08893ec791db7e917a2c0901ca895
 
 bob_token:
   user: bob
-  token: TOKEN_BOB_1
+  token: 2706d6900e47a84ddadb9912ded170ae24e58f18
